@@ -1,0 +1,12 @@
+---
+title: 'Chapter 15: Conclusion'
+author: "Mycah Therese Abaya"
+date: "2023-09-06"
+output: html_document
+---
+
+## 15.1 The tidyverse
+
+## 15.2 Stepping through the workflow
+
+## 15.3 Thank you

@@ -1,0 +1,74 @@
+---
+title: "Chapter 02: Data pipelines"
+author: "Mycah Therese Abaya"
+date: "2023-09-06"
+output: html_document
+---
+
+```{r}
+avg_area <- mean(iris$Sepal.Length[iris$Species=="setosa"]* 
+                 iris$Sepal.Width[iris$Species=="setosa"])
+```
+
+```{r}
+is_setosa	<- iris$Species=="setosa" 
+setosa	<- iris[is_setosa, ]
+setosa_area <- setosa$Sepal.Length * setosa$Sepal.Width 
+avg_area	<- mean(setosa_area)
+```
+
+## 2.1 About piping in R
+
+```{r}
+library(magrittr)
+```
+
+## 2.2 Simple usage
+
+```{r}
+letters %>%
+  toupper() %>%
+  length()
+```
+```{r}
+iris %>%
+  head() %>%
+  nrow()
+```
+
+## 2.3 Assigning results
+
+```{r}
+iris_filtered <- iris %>% head()
+
+iris_filtered2 <- iris %>%
+  head()
+```
+
+```{r}
+iris %>%
+  head() -> 
+  iris_filtered3
+```
+
+## 2.4 Jumbled functions
+
+```{r}
+letterz <- sub("s","z", letters)
+
+my_lm <- lm(Sepal.Width~Sepal.Length, iris)
+```
+
+```{r}
+letters %>%
+  sub("s" , "z" ,  .) ->
+  letterz
+
+iris %>%
+  1m(Sepal.Width~Sepal.Length, .) ->
+  my_lm
+```
+
+## 2.5 Summary
+
+## 2.6 Exercise
